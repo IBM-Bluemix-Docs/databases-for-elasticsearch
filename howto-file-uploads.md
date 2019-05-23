@@ -31,10 +31,10 @@ Files uploaded to your deployment use disk resources, both in the index and on t
 4. All nodes in your Elasticsearch cluster download the file contents from the index, decode the base64, and restore the files on their disks.
 5. At regular intervals, and restarts, the files get re-synced to assure they are present on all nodes.
 6. Files that are on disk but not in the index, get deleted. You can delete files from disk by removing
-them from the index. 
+them from the index.  
 
-- The index in Elasticsearch is `ibm_file_sync`.
-- The location of the files on disk is `/data/ibm_file_sync`.
+The index in Elasticsearch is `ibm_file_sync`.  
+The location of the files on disk is `/data/ibm_file_sync/current`.
 
 ## Uploading the files to the Index
 
@@ -62,7 +62,7 @@ curl -X PUT "https://user:password@host:port/ibm_file_sync" -H 'Content-Type: ap
 The URL is the `https` [connection string](/docs/services/databases-for-elasticsearch?topic=databases-for-elasticsearch-connection-strings) from your deployment.
 {: .tip}
 
-To use the index, encode the file contents as base64. For an example in bash, `ENC=$(base64 -w 0  README.md)`. Then, build a checksum over the content, `HASH=$(md5sum README.md)`.
+To use the index, encode the file contents as base64. To encode an example file `README.md` in bash, `ENC=$(base64 -w 0  README.md)`. Then, build a checksum over the content, `HASH=$(md5sum README.md)`.
 
 The download function compares the hash values on each sync run and if the values have not changed since the last sync, no new download is attempted.  Note that if any document in the index has no md5 value, all downloads are attempted again.
 {: .tip}
@@ -116,7 +116,7 @@ Any number of files can be uploaded and synced. The contents of the files are no
 
 ## Using the files
 
-Features of Elasticsearch makes use of files on the filesystem by accepting the path to the file when defining the index. These are a few of the features that can use files from the file system. This list contains examples, and is not exhaustive.
+Features of Elasticsearch makes use of files on the filesystem by accepting the path to the file when defining the index. An uploaded file `example.txt` is located at `/data/ibm_file_sync/current/example.txt`. These are a few of the features that can use files from the file system. This list contains examples, and is not exhaustive.
 - [Keep Words Token Filter](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-keep-words-tokenfilter.html)
 - [Mapping Char Filter](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-mapping-charfilter.html)
 - [Compound Word Token Filters](https://www.elastic.co/guide/en/elasticsearch/reference/current/analysis-compound-word-tokenfilter.html)
