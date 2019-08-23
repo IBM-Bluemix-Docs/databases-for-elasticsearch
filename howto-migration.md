@@ -37,7 +37,6 @@ If you want to perform the migration while data is still being written to your e
 ## Things to watch out for
 
 - Incremental restores can only work if the number of shards of each index on both deployments match. Don't try to reindex and change the number of shards of any indices once you've started taking snapshots.
-
 - If you have an index that is called `searchguard` in your existing Elasticsearch, you have to reindex it to a different name. `searchguard` is a reserved index name in {{site.data.keyword.databases-for-elasticsearch}}
 
 ## Example Migration
@@ -46,5 +45,5 @@ An example migration is performed and explored in detail in [Migrate your data f
 
 The example migrates a Compose Elasticsearch deployment that has 20 indices and a total size on disk of 35 GB to a {{site.data.keyword.databases-for-elasticsearch}} deployment. Data is still being written while the migration occurs, so the example uses multiple snapshots and restores.
 
-The example's shell script is available in the [{{site.data.keyword.cloud_notm}} Github repository](https://github.com/IBM-Cloud/clouddatabases-migration-examples/tree/master/elasticsearch). It is provided as a starting point for you to adapt for your use-case.
+The example's shell script is available in the [{{site.data.keyword.cloud_notm}} GitHub repository](https://github.com/IBM-Cloud/clouddatabases-migration-examples/tree/master/elasticsearch). It is provided as a starting point for you to adapt for your use-case.
 
