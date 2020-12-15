@@ -1,7 +1,7 @@
 ---
 copyright:
   years: 2019, 2020
-lastupdated: "2019-12-02"
+lastupdated: "2019-12-01"
 
 keyowrds: elasticsearch, databases, upgrading, 5.x, 6.x, 7.x
 
