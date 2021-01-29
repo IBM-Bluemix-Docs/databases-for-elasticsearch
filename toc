@@ -29,6 +29,7 @@ Databases For Elasticsearch
 		connecting-ibmcloud-app.md
 		connecting-external.md
 		connecting-curl.md
+		/cloud-databases/cloud-databases-vpes
 
 	{: .topicgroup}
 	Resources and Scaling
