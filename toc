@@ -63,6 +63,7 @@ Databases For Elasticsearch
 	/cloud-databases/cloud-databases-activity-tracker
 	/cloud-databases/cloud-databases-logging
 	/cloud-databases/cloud-databases-key-protect
+	/cloud-databases/cloud-databases-hpcs
 	/cloud-databases/cloud-databases-iam
 	/cloud-databases/cloud-databases-service-endpoints
 	/cloud-databases/cloud-databases-responsibilities-cloud-databases
