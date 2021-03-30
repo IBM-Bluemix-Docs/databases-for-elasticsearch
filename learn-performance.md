@@ -1,8 +1,8 @@
 ---
 
 Copyright:
-  years: 2019, 2020
-lastupdated: "2020-01-31"
+  years: 2019, 2021
+lastupdated: "2021-03-30"
 
 keywords: elasticsearch, databases, shards, JVM heap, monitoring, disk I/O
 
@@ -24,7 +24,7 @@ subcollection: databases-for-elasticsearch
 
 ## Monitoring your deployment
 
-{{site.data.keyword.databases-for-elasticsearch}} deployments offer an integration with the [{{site.data.keyword.cloud_notm}} Monitoring service](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
+{{site.data.keyword.databases-for-elasticsearch}} deployments offer an integration with the [{{site.data.keyword.monitoringfull}} service](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-sysdig-monitoring) for basic monitoring of resource usage on your deployment. Many of the available metrics, like disk usage and IOPS, are presented to help you configure [autoscaling](/docs/databases-for-elasticsearch?topic=databases-for-elasticsearch-autoscaling) on your deployment. Observing trends in your usage and configuring the autoscaling to respond to them can help alleviate performance problems before your databases become unstable due to resource exhaustion.
 
 ## Elasticsearch Sharding
 
@@ -38,7 +38,7 @@ Elasticsearch memory is divided into to categories, JVM heap size and system mem
 
 ## Disk IOPS
 
-The number of Input/Output Operations per second (IOPS) is limited by the type of storage volume. Storage volumes for {{site.data.keyword.databases-for-elasticsearch}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/BlockStorage?topic=BlockStorage-About#provendurance). Hitting IOPS limits can cause your databases to respond slowly or appear unresponsive. 
+The number of Input/Output Operations per second (IOPS) is limited by the type of storage volume. Storage volumes for {{site.data.keyword.databases-for-elasticsearch}} deployments are provisioned on [Block Storage Endurance Volumes in the 10 IOPS per GB tier](/docs/BlockStorage?topic=BlockStorage-orderingthroughConsole#orderingthroughConsoleEndurance). Hitting IOPS limits can cause your databases to respond slowly or appear unresponsive. 
 
 Indexing uses disk, so if your use-case is write-heavy, your indexing speed can be limited by the IOPS available to your deployment. Some bottlenecks can be ameliorated by [tuning your indexes for disk usage](https://www.elastic.co/guide/en/elasticsearch/reference/current/tune-for-disk-usage.html). In addition, searching can use disk if your working data set does not fit in the file system cache, increasing IOPS load. If your use-case involves searching a large data set, increasing the memory on your deployment can help Elasticsearch rely less on disk. 
 
